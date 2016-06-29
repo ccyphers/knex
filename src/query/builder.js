@@ -696,6 +696,11 @@ assign(Builder.prototype, {
     return this
   },
 
+  users_meta: function(data) {
+    this._users_meta = data
+    return this;
+  },
+
   // Passes query to provided callback function, useful for e.g. composing
   // domain-specific helpers
   modify: function(callback) {
@@ -785,6 +790,7 @@ Builder.prototype.andHaving   = Builder.prototype.having
 Builder.prototype.from        = Builder.prototype.table
 Builder.prototype.into        = Builder.prototype.table
 Builder.prototype.del         = Builder.prototype.delete
+Builder.prototype.users_meta         = Builder.prototype.users_meta
 
 // Attach all of the top level promise methods that should be chainable.
 require('../interface')(Builder);
